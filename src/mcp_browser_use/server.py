@@ -2,6 +2,9 @@
 
 import asyncio
 import logging
+import subprocess
+import sys
+from pathlib import Path
 from typing import Any, Dict, Optional
 
 logging.basicConfig(
@@ -21,6 +24,8 @@ from browser_use.agent.prompts import AgentMessagePrompt, SystemPrompt
 from browser_use.browser.browser import Browser, BrowserConfig
 from browser_use.browser.context import BrowserContext
 from mcp.server.fastmcp import FastMCP
+
+from .utils import check_playwright_installation
 
 mcp = FastMCP("browser_use")
 
@@ -486,6 +491,11 @@ async def done(success: bool = True, text: str = "") -> dict:
 
 def main():
     """Run the MCP server"""
+    if not check_playwright_installation():
+        logger.error("Playwright is not properly installed. Exiting.")
+        sys.exit(1)
+
+    logger.info("Starting MCP server for browser-use")
     mcp.run(transport="stdio")
 
 
