@@ -2,10 +2,8 @@
 
 import asyncio
 import logging
-import subprocess
 import sys
-from pathlib import Path
-from typing import Any, Dict, Optional
+from typing import Optional
 
 logging.basicConfig(
     level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
