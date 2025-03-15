@@ -1,12 +1,11 @@
-[build-system]
-requires = ["setuptools>=42", "wheel"]
-build-backend = "setuptools.build_meta"
-
 [project]
-name = "browser-use-mcp"
+name = "mcp-browser-use"
 version = "0.1.0"
-description = "Browser Use MCP for Claude"
+description = "MCP server for browser-use"
 requires-python = ">=3.11"
+authors = [
+    {name = "Vinayak Mehta", email = "vmehta94@gmail.com"},
+]
 dependencies = [
     "mcp>=0.1.0",
     "python-dotenv>=1.0.0",
@@ -14,9 +13,16 @@ dependencies = [
     "uvicorn>=0.27.0",
     "browser-use>=0.1.40",
 ]
+[project.urls]
+"Homepage" = "https://github.com/vinayak-mehta/mcp-browser-use"
+"Bug Tracker" = "https://github.com/vinayak-mehta/mcp-browser-use/issues"
 
 [project.scripts]
 browser-use-mcp = "browser_use_mcp.server:main"
+
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
