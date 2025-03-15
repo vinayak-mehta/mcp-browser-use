@@ -18,7 +18,7 @@ dependencies = [
 "Bug Tracker" = "https://github.com/vinayak-mehta/mcp-browser-use/issues"
 
 [project.scripts]
-browser-use-mcp = "browser_use_mcp.server:main"
+browser-use-mcp = "mcp_browser_use.server:main"
 
 [build-system]
 requires = ["setuptools>=42", "wheel"]
@@ -26,4 +26,4 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
-packages = ["browser_use_mcp"]
+packages = ["mcp_browser_use"]
