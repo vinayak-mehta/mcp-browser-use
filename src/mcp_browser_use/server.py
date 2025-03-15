@@ -10,7 +10,6 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Configure logging to suppress browser-use logs
 logging.getLogger("browser_use").setLevel(logging.CRITICAL)
 logging.getLogger("playwright").setLevel(logging.CRITICAL)
 

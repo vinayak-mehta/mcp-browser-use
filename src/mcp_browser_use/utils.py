@@ -1,6 +1,7 @@
 # ruff: noqa: E402
 
 import logging
+import os
 import subprocess
 import sys
 
@@ -8,6 +9,9 @@ logging.basicConfig(
     level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
 )
 logger = logging.getLogger(__name__)
+
+logging.getLogger("browser_use").setLevel(logging.CRITICAL)
+logging.getLogger("playwright").setLevel(logging.CRITICAL)
 
 
 def check_playwright_installation():
@@ -33,10 +37,14 @@ def check_playwright_installation():
             if "Executable doesn't exist" in str(e):
                 logger.error("Playwright browsers are not installed. Installing now...")
                 try:
-                    subprocess.run(
-                        [sys.executable, "-m", "playwright", "install", "chromium"],
-                        check=True,
-                    )
+                    # Redirect stdout and stderr to /dev/null to suppress progress bars
+                    with open(os.devnull, "w") as devnull:
+                        subprocess.run(
+                            [sys.executable, "-m", "playwright", "install", "chromium"],
+                            stdout=devnull,
+                            stderr=devnull,
+                            check=True,
+                        )
                     logger.info("Playwright browsers installed successfully.")
                     return True
                 except subprocess.CalledProcessError:
