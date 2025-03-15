@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "browser-use-mcp"
+version = "0.1.0"
+description = "Browser Use MCP for Claude"
+requires-python = ">=3.11"
+dependencies = [
+    "mcp>=0.1.0",
+    "python-dotenv>=1.0.0",
+    "fastapi>=0.109.0",
+    "uvicorn>=0.27.0",
+    "browser-use>=0.1.40",
+]
+
+[project.scripts]
+browser-use-mcp = "browser_use_mcp.server:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+packages = ["browser_use_mcp"]
