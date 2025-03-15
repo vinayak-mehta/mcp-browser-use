@@ -13,6 +13,16 @@ dependencies = [
     "uvicorn>=0.27.0",
     "browser-use>=0.1.40",
 ]
+readme = "README.md"
+license = {text = "Apache-2.0"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "License :: OSI Approved :: Apache Software License",
+]
+
 [project.urls]
 "Homepage" = "https://github.com/vinayak-mehta/mcp-browser-use"
 "Bug Tracker" = "https://github.com/vinayak-mehta/mcp-browser-use/issues"
