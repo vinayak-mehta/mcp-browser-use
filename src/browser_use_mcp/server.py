@@ -1,4 +1,4 @@
-# ruff: noqa: F402
+# ruff: noqa: E402
 
 import asyncio
 import logging
@@ -16,11 +16,7 @@ logging.getLogger("playwright").setLevel(logging.CRITICAL)
 import json
 
 import markdownify
-from browser_use.agent.message_manager.service import (
-    MessageManager,
-    MessageManagerSettings,
-)
-from browser_use.agent.message_manager.views import MessageManagerState
+from browser_use.agent.message_manager.service import MessageManager
 from browser_use.agent.prompts import AgentMessagePrompt, SystemPrompt
 from browser_use.browser.browser import Browser, BrowserConfig
 from browser_use.browser.context import BrowserContext
