@@ -1,4 +1,4 @@
-# mcp-browser-use: A browser automation agent for MCP
+# mcp-browser-use: MCP server for browser-use
 
 [![Version](https://img.shields.io/pypi/v/mcp-browser-use.svg)](https://pypi.org/project/mcp-browser-use/) [![Python Versions](https://img.shields.io/pypi/pyversions/mcp-browser-use.svg)](https://pypi.org/project/mcp-browser-use/) [![License](https://img.shields.io/pypi/l/mcp-browser-use.svg)](https://pypi.org/project/mcp-browser-use/)
 
