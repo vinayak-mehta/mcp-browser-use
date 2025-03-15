@@ -28,7 +28,7 @@ classifiers = [
 "Bug Tracker" = "https://github.com/vinayak-mehta/mcp-browser-use/issues"
 
 [project.scripts]
-browser-use-mcp = "mcp_browser_use.server:main"
+mcp-browser-use = "mcp_browser_use.server:main"
 
 [build-system]
 requires = ["setuptools>=42", "wheel"]
