@@ -6,6 +6,8 @@
 
 Unlike other `browser-use` MCPs that make you pay for an LLM API key, this one just uses the LLM that's already set up in your MCP client.
 
+[📺 Demo](https://x.com/vortex_ape/status/1900953901588729864)
+
 ## Quickstart
 
 You can start using `mcp-browser-use` with an MCP client by putting the following command in the relevant config:
