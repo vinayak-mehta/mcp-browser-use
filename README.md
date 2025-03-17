@@ -13,8 +13,10 @@ Unlike other `browser-use` MCPs that make you pay for an LLM API key, this one j
 You can start using `mcp-browser-use` with an MCP client by putting the following command in the relevant config:
 
 ```bash
-$ uvx mcp-browser-use
+uvx mcp-browser-use
 ```
+
+**Note**: Provide the full path to uvx to prevent MCP client failing to start the server.
 
 ## Contributing
 
