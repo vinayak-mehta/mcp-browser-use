@@ -100,6 +100,7 @@ async def search_google(query: str) -> str:
     await page.wait_for_load_state()
     return f'🔍 Searched for "{query}" in Google'
 
+
 @mcp.tool()
 async def go_to_url(url: str) -> str:
     """
