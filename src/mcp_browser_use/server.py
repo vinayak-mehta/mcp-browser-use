@@ -100,6 +100,19 @@ async def search_google(query: str) -> str:
     await page.wait_for_load_state()
     return f'🔍 Searched for "{query}" in Google'
 
+@mcp.tool()
+async def search_duckduckgo(query: str) -> str:
+    """
+    Search the query in duckduckgo in the current tab.
+    Args:
+        query (str): The search query to use in duckduckgo
+    Returns:
+        str: A message confirming the search was performed
+    """
+    page = await browser_context.get_current_page()
+    await page.goto(f"https://www.duckduckgo.com/search?q={query}")
+    await page.wait_for_load_state()
+    return f'🔍 Searched for "{query}" in duckduckgo'
 
 @mcp.tool()
 async def go_to_url(url: str) -> str:
