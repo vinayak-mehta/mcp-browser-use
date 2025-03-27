@@ -485,6 +485,33 @@ async def done(success: bool = True, text: str = "") -> dict:
     """
     return {"is_done": True, "success": success, "extracted_content": text}
 
+@mcp.tool()
+async def execute_javascript(script: str) -> str:
+    """
+    Execute JavaScript code on the current page.
+    Args:
+        script (str): The JavaScript code to execute
+    Returns:
+        str: A message with the result of the JavaScript execution
+    """
+    page = await browser_context.get_current_page()
+    try:
+        result = await page.evaluate(script)
+        
+        # For complex objects, convert to JSON string
+        if isinstance(result, (dict, list)):
+            import json
+            try:
+                result_str = json.dumps(result, indent=2)
+                return f"📝 JavaScript executed successfully:\n{result_str}"
+            except:
+                # Fallback if JSON serialization fails
+                return f"📝 JavaScript executed successfully. Result (non-serializable): {str(result)}"
+        else:
+            return f"📝 JavaScript executed successfully. Result: {result}"
+    except Exception as e:
+        return f"❌ Error executing JavaScript: {str(e)}"
+
 
 def main():
     """Run the MCP server"""
